@@ -1,0 +1,44 @@
+﻿@page
+@using System.Globalization;
+@model IndexModel
+@{
+    ViewData["Title"] = "Header-Test";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Supplied headers</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Value
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var headers = this.Model.Headers.Keys.Order().ToList();
+            }
+
+            @foreach (var header in headers)
+            {
+                var values = this.Model.Headers[header]!;
+
+                for (int i = 0; i < values.Count; i++)
+                {
+                    <tr>
+                        @if (i == 0)
+                        {
+                            <td rowspan="@values.Count.ToString("0", CultureInfo.InvariantCulture)">@header</td>
+                        }
+                        <td>@values[i]</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
