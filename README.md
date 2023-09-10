@@ -1,3 +1,7 @@
+[![Docker Pulls](https://img.shields.io/docker/pulls/2chris/headertest.svg)](https://hub.docker.com/r/2chris/headertest/)
+[![Docker Image Size](https://img.shields.io/docker/image-size/2chris/headertest.svg?sort=date)](https://hub.docker.com/r/2chris/headertest/)
+![GitHub](https://img.shields.io/github/license/chri-s/headertest)
+
 # HeaderTest
 This is a simple website to check request headers (for testing reverse proxy configurations).
 
